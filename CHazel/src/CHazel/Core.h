@@ -9,3 +9,5 @@
 #else
 	#error CHazel only support Window!
 #endif
+
+#define BIT(x) (1 << x)
