@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef CHZ_PLATFORM__WINDOWS
+#ifdef CHZ_PLATFORM_WINDOWS
 
 extern CHazel::Application* CHazel::CreateApplication();
 
