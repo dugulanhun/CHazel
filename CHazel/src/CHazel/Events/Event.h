@@ -2,9 +2,6 @@
 
 #include "CHazel/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace CHazel {
 
 	// Events in CHazel are currently blocking, meaning when an event occurs it

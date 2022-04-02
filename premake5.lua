@@ -18,6 +18,9 @@ project "CHazel"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "chzpch.h"
+	pchsource "CHazel/src/chzpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

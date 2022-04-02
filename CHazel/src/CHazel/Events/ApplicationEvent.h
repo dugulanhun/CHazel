@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace CHazel {
 
 	class CHAZEL_API WindowResizeEvent : public Event

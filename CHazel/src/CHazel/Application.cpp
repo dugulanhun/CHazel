@@ -1,3 +1,4 @@
+#include "chzpch.h"
 #include "Application.h"
 
 #include "Log.h"
@@ -7,7 +8,7 @@ namespace CHazel{
 
 	Application::Application()
 	{
-
+		
 	}
 
 	Application::~Application()
