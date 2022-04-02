@@ -1,5 +1,6 @@
 #pragma once
 
+#include "chzpch.h"
 #include "CHazel/Core.h"
 
 namespace CHazel {
@@ -15,7 +16,7 @@ namespace CHazel {
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
 		KeyPressed, KeyReleased,
-		MouseButtonPressed, MouseButtonRealeased, MouseMoved, MouseScrolled
+		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
 	enum EventCategory
@@ -60,7 +61,7 @@ namespace CHazel {
 		//Define EventFunc() Template
 		//with T& input and return bool
 		template <typename T>
-		using EventFn = std::function<bool>(T&);
+		using EventFn = std::function<bool(T&)>;
 	public:
 		EventDispatcher(Event& event)
 			:m_Event(event)
