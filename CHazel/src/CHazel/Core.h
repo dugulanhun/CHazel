@@ -10,4 +10,12 @@
 	#error CHazel only support Window!
 #endif
 
+#ifdef CHZ_ENABLE_ASSERTS
+	#define CHZ_ASSERT(x, ...) { if(!(X)) { CHZ_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }}
+	#define CHZ_CORE_ASSERT(x, ...) { if(!(X)) { CHZ_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }}
+#else
+	#define CHZ_ASSERT(x, ...)
+	#define CHZ_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << x)

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core.h"
-//#include "CHazel/Events/Event.h"
+#include "Window.h"
 
 namespace CHazel {
 	
@@ -12,6 +12,9 @@ namespace CHazel {
 		virtual ~Application();
 
 		void run();
+	private:
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 
 	// To be define in CLIENT

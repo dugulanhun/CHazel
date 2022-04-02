@@ -7,6 +7,12 @@
     <Filter Include="CHazel\Events">
       <UniqueIdentifier>{C0FCCAD8-2CBD-460F-F5F7-8F8C61778BEB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\CHazel.h" />
@@ -34,6 +40,12 @@
     <ClInclude Include="src\CHazel\Log.h">
       <Filter>CHazel</Filter>
     </ClInclude>
+    <ClInclude Include="src\CHazel\Window.h">
+      <Filter>CHazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\chzpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="src\CHazel\Log.cpp">
       <Filter>CHazel</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\chzpch.cpp" />
   </ItemGroup>

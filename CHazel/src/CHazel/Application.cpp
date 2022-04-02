@@ -1,14 +1,14 @@
 #include "chzpch.h"
 #include "Application.h"
 
-#include "Log.h"
 #include "CHazel/Events/ApplicationEvent.h"
+#include <GLFW/glfw3.h>
 
 namespace CHazel{
 
 	Application::Application()
 	{
-		
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -18,18 +18,13 @@ namespace CHazel{
 
 	void Application::run()
 	{
-		WindowResizeEvent e(1280, 720);
+		while (m_Running)
+		{
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
 
-		if (e.IsInCategory(EventCategoryApplication))
-		{
-			CHZ_TRACE(e);
+			m_Window->OnUpdate();
 		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			CHZ_TRACE(e);
-		}
-		
-		while (true);
 	}
 
 }

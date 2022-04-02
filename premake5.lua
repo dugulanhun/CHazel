@@ -10,6 +10,12 @@ workspace "CHazel"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "CHazel/vendor/GLFW/include"
+
+include "CHazel/vendor/GLFW"
+
 project "CHazel"
 	location "CHazel"
 	kind "SharedLib"
@@ -30,7 +36,14 @@ project "CHazel"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -41,7 +54,8 @@ project "CHazel"
 		defines
 		{
 			"CHZ_PLATFORM_WINDOWS",
-			"CHZ_BUILD_DLL"
+			"CHZ_BUILD_DLL",
+			"CHZ_ENABLE_ASSERTS"
 		}
 
 		postbuildcommands
