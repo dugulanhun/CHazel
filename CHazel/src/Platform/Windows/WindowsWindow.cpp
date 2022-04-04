@@ -1,9 +1,13 @@
 #include "chzpch.h"
+#include <glad/glad.h>
 #include "WindowsWindow.h"
+
+#include "CHazel/Core.h"
 
 #include "CHazel/Events/ApplicationEvent.h"
 #include "CHazel/Events/MouseEvent.h"
 #include "CHazel/Events/KeyEvent.h"
+
 
 namespace CHazel {
 
@@ -42,7 +46,7 @@ namespace CHazel {
 		{
 			// TODO: glfwTerminate on system shutdown
 			int success = glfwInit();
-			//CHZ_CORE_ASSERT(success, "Could not initialize GLFW!");
+			CHZ_CORE_ASSERT(success, "Could not initialize GLFW!");
 
 			glfwSetErrorCallback(GLFWErrorCallback);
 
@@ -51,6 +55,8 @@ namespace CHazel {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		CHZ_CORE_ASSERT(status, "Failed to initialize Glad!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
