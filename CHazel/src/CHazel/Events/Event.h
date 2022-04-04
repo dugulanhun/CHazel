@@ -38,8 +38,9 @@ namespace CHazel {
 
 	class CHAZEL_API Event
 	{
-		friend class EventDispatcher;
 	public:
+		bool Handled = false;
+
 		// =0 (Pure Virtual) here means it has to be implemented elsewhere (Prob. in inherited class)
 		// const means the function itself will not change the member property
 		virtual EventType GetEvenType() const = 0;
@@ -51,8 +52,6 @@ namespace CHazel {
 		{
 			return GetCategoryFlags() & category;
 		}
-	protected:
-		bool m_Handled = false;
 	};
 
 	// class Event Dispatcher
@@ -81,7 +80,7 @@ namespace CHazel {
 			{
 				// Whatever it is, this certain function of this Event will be called,
 				// And the function will decide whether to consume the event or not.
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

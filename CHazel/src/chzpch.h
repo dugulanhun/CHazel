@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "CHazel//Log.h"
+#include "CHazel/Log.h"
 
 #ifdef CHZ_PLATFORM_WINDOWS
 #include <Windows.h>

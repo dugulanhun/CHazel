@@ -3,6 +3,7 @@
 // For use by CHazel applications
 
 #include "CHazel/Application.h"
+#include "CHazel/Layer.h"
 #include "CHazel/Log.h"
 
 //-------Entry Point-------------
