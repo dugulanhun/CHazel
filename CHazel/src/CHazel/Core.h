@@ -10,6 +10,10 @@
 	#error CHazel only support Window!
 #endif
 
+#ifdef CHZ_DEBUG
+	#define CHZ_ENABLE_ASSERTS
+#endif
+
 #ifdef CHZ_ENABLE_ASSERTS
 	#define CHZ_ASSERT(x, ...) { if(!(x)) { CHZ_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }}
 	#define CHZ_CORE_ASSERT(x, ...) { if(!(x)) { CHZ_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); }}
