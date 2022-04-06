@@ -158,12 +158,14 @@
     <ClInclude Include="src\CHazel\Events\KeyEvent.h" />
     <ClInclude Include="src\CHazel\Events\MouseEvent.h" />
     <ClInclude Include="src\CHazel\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\CHazel\Input.h" />
     <ClInclude Include="src\CHazel\Layer.h" />
     <ClInclude Include="src\CHazel\LayerStack.h" />
     <ClInclude Include="src\CHazel\Log.h" />
     <ClInclude Include="src\CHazel\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsImput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\chzpch.h" />
   </ItemGroup>
@@ -174,6 +176,7 @@
     <ClCompile Include="src\CHazel\LayerStack.cpp" />
     <ClCompile Include="src\CHazel\Log.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\chzpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>

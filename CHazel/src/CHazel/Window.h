@@ -39,6 +39,8 @@ namespace CHazel {
 		virtual void SetVSync(bool enable) = 0;
 		virtual bool IsVSync() const = 0;
 
+		virtual void* GetNativeWindow() const = 0;
+
 		// implement in children class
 		static Window* Create(const WindowProps& props = WindowProps());
 
