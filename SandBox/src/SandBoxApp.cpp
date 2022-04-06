@@ -10,7 +10,7 @@ public:
 
 	void OnUpdate() override
 	{
-		CHZ_INFO("ExampleLayer::Update");
+		// CHZ_INFO("ExampleLayer::Update");
 	}
 
 
