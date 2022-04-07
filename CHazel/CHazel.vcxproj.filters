@@ -70,6 +70,8 @@
     <ClInclude Include="src\chzpch.h" />
     <ClInclude Include="src\CHazel\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsImput.h" />
+    <ClInclude Include="src\CHazel\KeyCodes.h" />
+    <ClInclude Include="src\CHazel\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CHazel\Application.cpp">

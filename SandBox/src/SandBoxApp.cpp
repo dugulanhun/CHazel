@@ -11,12 +11,21 @@ public:
 	void OnUpdate() override
 	{
 		// CHZ_INFO("ExampleLayer::Update");
+		if (CHazel::Input::IsKeyPressed(CHZ_KEY_TAB))
+			CHZ_TRACE("Tab key is pressed (poll)!");
 	}
 
 
 	void OnEvent(CHazel::Event& event) override
 	{
-		CHZ_TRACE("{0}", event);
+		// CHZ_TRACE("{0}", event);
+		if (event.GetEvenType() == CHazel::EventType::KeyPressed)
+		{
+			CHazel::KeyPressedEvent& e = (CHazel::KeyPressedEvent&)event;
+			if (CHazel::Input::IsKeyPressed(CHZ_KEY_TAB))
+				CHZ_TRACE("Tab key is pressed (event)!");
+			CHZ_TRACE("{0}", e.GetKeyCode());
+		}
 	}
 
 };
