@@ -6,6 +6,8 @@
 #include "CHazel/LayerStack.h"
 #include "CHazel/Events/ApplicationEvent.h"
 
+#include "CHazel/ImGui/ImGuiLayer.h"
+
 namespace CHazel {
 	
 	class CHAZEL_API Application
@@ -27,6 +29,7 @@ namespace CHazel {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

@@ -24,7 +24,8 @@ namespace CHazel {
 	private:
 		std::vector<Layer*> m_Layers;
 		// 层与覆层的分界线迭代器
-		std::vector<Layer*>::iterator m_LayerInsert;
+		//std::vector<Layer*>::iterator m_LayerInsert;
+		unsigned int m_LayerInsertIndex = 0;
 	};
 
 }

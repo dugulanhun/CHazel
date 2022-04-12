@@ -1,5 +1,7 @@
 #include <CHazel.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer: public CHazel::Layer
 {
 public:
@@ -15,7 +17,13 @@ public:
 			CHZ_TRACE("Tab key is pressed (poll)!");
 	}
 
-
+	void OnImGuiRender() override
+	{
+ 		ImGui::Begin("Test");
+ 		ImGui::Text("Hello World");
+ 		ImGui::End();
+	}
+	
 	void OnEvent(CHazel::Event& event) override
 	{
 		// CHZ_TRACE("{0}", event);
@@ -27,7 +35,6 @@ public:
 			CHZ_TRACE("{0}", e.GetKeyCode());
 		}
 	}
-
 };
 
 
@@ -37,7 +44,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushLayer(new CHazel::ImGuiLayer());
+		// PushLayer(new CHazel::ImGuiLayer());
 	}
 
 	~Sandbox()

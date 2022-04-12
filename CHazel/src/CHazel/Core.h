@@ -1,17 +1,23 @@
 #pragma once
 
 #ifdef CHZ_PLATFORM_WINDOWS
+#if CHZ_DYNAMIC_LINK
 	#ifdef CHZ_BUILD_DLL
 		#define CHAZEL_API __declspec(dllexport)
 	#else
 		#define CHAZEL_API __declspec(dllimport)
 	#endif
 #else
+	#define CHAZEL_API
+#endif
+#else
 	#error CHazel only support Window!
 #endif
 
 #ifdef CHZ_DEBUG
+#ifndef CHZ_ENABLE_ASSERTS
 	#define CHZ_ENABLE_ASSERTS
+#endif
 #endif
 
 #ifdef CHZ_ENABLE_ASSERTS
