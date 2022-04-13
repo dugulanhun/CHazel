@@ -8,6 +8,8 @@
 
 #include "CHazel/ImGui/ImGuiLayer.h"
 
+#include "CHazel/Renderer/Shader.h"
+
 namespace CHazel {
 	
 	class CHAZEL_API Application
@@ -34,6 +36,7 @@ namespace CHazel {
 		LayerStack m_LayerStack;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};
