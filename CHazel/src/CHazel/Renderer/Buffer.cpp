@@ -1,7 +1,7 @@
 #include "chzpch.h"
 #include "Buffer.h"
 
-#include "Renderer.h"
+#include "RendererAPI.h"
 
 #include "Platform/OpenGL/OpenGLBuffer.h"
 
@@ -9,10 +9,10 @@ namespace CHazel
 {
 	VertexBuffer* VertexBuffer::Create(float* vertices, uint32_t size)
 	{
-		switch (Renderer::GetAPI())
+		switch (RendererAPI::GetAPI())
 		{
-		case RendererAPI::None: CHZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLVertexBuffer(vertices, size);
+		case RendererAPI::API::None: CHZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLVertexBuffer(vertices, size);
 		}
 
 		CHZ_CORE_ASSERT(false, "Unknown RendererAPI!");
@@ -21,10 +21,10 @@ namespace CHazel
 	
 	IndexBuffer* IndexBuffer::Create(uint32_t* indices, uint32_t size)
 	{
-		switch (Renderer::GetAPI())
+		switch (RendererAPI::GetAPI())
 		{
-		case RendererAPI::None: CHZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::OpenGL: return new OpenGLIndexBuffer(indices, size);
+		case RendererAPI::API::None: CHZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+		case RendererAPI::API::OpenGL: return new OpenGLIndexBuffer(indices, size);
 		}
 
 		CHZ_CORE_ASSERT(false, "Unknown RendererAPI!");
