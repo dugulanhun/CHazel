@@ -6,13 +6,9 @@
 #include "CHazel/LayerStack.h"
 #include "CHazel/Events/ApplicationEvent.h"
 
+#include "CHazel/Core/Timestep.h"
+
 #include "CHazel/ImGui/ImGuiLayer.h"
-
-#include "CHazel/Renderer/Shader.h"
-#include "CHazel/Renderer/Buffer.h"
-#include "CHazel/Renderer/VertexArray.h"
-
-#include "CHazel/Renderer/OrthographicCameca.h"
 
 namespace CHazel {
 	
@@ -39,6 +35,7 @@ namespace CHazel {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

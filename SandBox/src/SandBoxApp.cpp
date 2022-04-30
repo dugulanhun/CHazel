@@ -109,22 +109,22 @@ public:
 
 	}
 
-	void OnUpdate() override
+	void OnUpdate(CHazel::Timestep ts) override
 	{
 		if (CHazel::Input::IsKeyPressed(CHZ_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed;
+			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
 		else if (CHazel::Input::IsKeyPressed(CHZ_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed;
+			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 
 		if (CHazel::Input::IsKeyPressed(CHZ_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed;
+			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
 		else if (CHazel::Input::IsKeyPressed(CHZ_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed;
+			m_CameraPosition.y += m_CameraMoveSpeed * ts;
 
 		if (CHazel::Input::IsKeyPressed(CHZ_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed;
+			m_CameraRotation += m_CameraRotationSpeed * ts;
 		else if (CHazel::Input::IsKeyPressed(CHZ_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed;
+			m_CameraRotation -= m_CameraRotationSpeed * ts;
 
 		CHazel::RendererCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		CHazel::RendererCommand::Clear();
@@ -158,10 +158,10 @@ private:
 
 	CHazel::OrthographicCameca m_Camera;
 	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 0.2f;
+	float m_CameraMoveSpeed = 5.0f;
 
 	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 2.0f;
+	float m_CameraRotationSpeed = 180.0f;
 
 };
 

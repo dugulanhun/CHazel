@@ -1359,6 +1359,7 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\CHazel\Renderer\RendererCommand.h" />
     <ClInclude Include="src\CHazel\Renderer\OrthographicCameca.h" />
+    <ClInclude Include="src\CHazel\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CHazel\Application.cpp">

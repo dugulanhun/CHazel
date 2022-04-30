@@ -143,6 +143,7 @@
     <ClInclude Include="src\CHazel.h" />
     <ClInclude Include="src\CHazel\Application.h" />
     <ClInclude Include="src\CHazel\Core.h" />
+    <ClInclude Include="src\CHazel\Core\Timestep.h" />
     <ClInclude Include="src\CHazel\EntryPoint.h" />
     <ClInclude Include="src\CHazel\Events\ApplicationEvent.h" />
     <ClInclude Include="src\CHazel\Events\Event.h" />

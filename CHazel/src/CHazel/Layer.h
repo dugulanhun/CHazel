@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Core.h"
+#include "CHazel/Core.h"
+#include "CHazel/Core/Timestep.h"
 #include "CHazel/Events/Event.h"
 
 namespace CHazel {
@@ -13,7 +14,7 @@ namespace CHazel {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

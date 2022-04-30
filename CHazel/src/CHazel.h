@@ -6,6 +6,8 @@
 #include "CHazel/Layer.h"
 #include "CHazel/Log.h"
 
+#include "CHazel/Core/Timestep.h"
+
 #include "CHazel/Input.h"
 #include "CHazel/KeyCodes.h"
 #include "CHazel/MouseButtonCodes.h"
