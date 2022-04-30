@@ -12,6 +12,8 @@
 #include "CHazel/Renderer/Buffer.h"
 #include "CHazel/Renderer/VertexArray.h"
 
+#include "CHazel/Renderer/OrthographicCameca.h"
+
 namespace CHazel {
 	
 	class CHAZEL_API Application
@@ -42,6 +44,8 @@ namespace CHazel {
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVertexArray;
+
+		OrthographicCameca m_Camera;
 	private:
 		static Application* s_Instance;
 	};
