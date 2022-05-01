@@ -22,7 +22,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<CHazel::VertexBuffer> vertexBuffer;
+		CHazel::Ref<CHazel::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(CHazel::VertexBuffer::Create(vertices, sizeof(vertices)));
 		CHazel::BufferLayout layout = {
 			{CHazel::ShaderDataType::Float3, "a_Position"},
@@ -32,7 +32,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<CHazel::IndexBuffer> indexBuffer;
+		CHazel::Ref<CHazel::IndexBuffer> indexBuffer;
 		indexBuffer.reset(CHazel::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -45,7 +45,7 @@ public:
 			-0.5f,  0.5f, 0.0f
 		};
 
-		std::shared_ptr<CHazel::VertexBuffer> squareVB;
+		CHazel::Ref<CHazel::VertexBuffer> squareVB;
 		squareVB.reset(CHazel::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareVB->SetLayout({
 			{ CHazel::ShaderDataType::Float3, "a_Position" }
@@ -53,7 +53,7 @@ public:
 		m_SquareVertexArray->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<CHazel::IndexBuffer> squareIB;
+		CHazel::Ref<CHazel::IndexBuffer> squareIB;
 		squareIB.reset(CHazel::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
 		m_SquareVertexArray->SetIndexBuffer(squareIB);
 
@@ -178,11 +178,11 @@ public:
 	{		
 	}
 private:
-	std::shared_ptr<CHazel::Shader> m_Shader;
-	std::shared_ptr<CHazel::VertexArray> m_VertexArray;
+	CHazel::Ref<CHazel::Shader> m_Shader;
+	CHazel::Ref<CHazel::VertexArray> m_VertexArray;
 
-	std::shared_ptr<CHazel::Shader> m_FlatColorShader;
-	std::shared_ptr<CHazel::VertexArray> m_SquareVertexArray;
+	CHazel::Ref<CHazel::Shader> m_FlatColorShader;
+	CHazel::Ref<CHazel::VertexArray> m_SquareVertexArray;
 
 	CHazel::OrthographicCameca m_Camera;
 	glm::vec3 m_CameraPosition;

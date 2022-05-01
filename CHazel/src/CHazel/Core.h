@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #ifdef CHZ_PLATFORM_WINDOWS
 #if CHZ_DYNAMIC_LINK
 	#ifdef CHZ_BUILD_DLL
@@ -31,3 +33,12 @@
 #define BIT(x) (1 << x)
 
 #define CHZ_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+
+namespace CHazel {
+
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+}
