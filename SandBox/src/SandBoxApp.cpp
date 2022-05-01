@@ -145,14 +145,13 @@ public:
 			void main()
 			{
 				color = texture(u_Texture, v_TexCoord);
-				// color = vec4(v_TexCoord, 0.0, 1.0);
-
 			}
 		)";
 
 		m_TextureShader.reset(CHazel::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = CHazel::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_LogoTexture = CHazel::Texture2D::Create("assets/textures/ChernoLogo.png");
 
 		std::dynamic_pointer_cast<CHazel::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<CHazel::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -200,6 +199,9 @@ public:
 
 		m_Texture->Bind();
 		CHazel::Renderer::Submit(m_TextureShader, m_SquareVertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_LogoTexture->Bind();
+		CHazel::Renderer::Submit(m_TextureShader, m_SquareVertexArray, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+
 
 		// Triangle
 		// CHazel::Renderer::Submit(m_Shader, m_VertexArray);
@@ -226,7 +228,7 @@ private:
 	CHazel::Ref<CHazel::Shader> m_FlatColorShader, m_TextureShader;
 	CHazel::Ref<CHazel::VertexArray> m_SquareVertexArray;
 
-	CHazel::Ref<CHazel::Texture2D> m_Texture;
+	CHazel::Ref<CHazel::Texture2D> m_Texture, m_LogoTexture;
 
 	CHazel::OrthographicCameca m_Camera;
 	glm::vec3 m_CameraPosition;
