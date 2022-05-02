@@ -1403,6 +1403,7 @@
     </ClInclude>
     <ClInclude Include="src\CHazel\Renderer\Texture.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
+    <ClInclude Include="src\CHazel\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CHazel\Application.cpp">
@@ -1473,5 +1474,6 @@
     </ClCompile>
     <ClCompile Include="src\CHazel\Renderer\Texture.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />
+    <ClCompile Include="src\CHazel\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>

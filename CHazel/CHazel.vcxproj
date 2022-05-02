@@ -156,6 +156,7 @@
     <ClInclude Include="src\CHazel\LayerStack.h" />
     <ClInclude Include="src\CHazel\Log.h" />
     <ClInclude Include="src\CHazel\MouseButtonCodes.h" />
+    <ClInclude Include="src\CHazel\OrthographicCameraController.h" />
     <ClInclude Include="src\CHazel\Renderer\Buffer.h" />
     <ClInclude Include="src\CHazel\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\CHazel\Renderer\OrthographicCameca.h" />
@@ -599,6 +600,7 @@
     <ClCompile Include="src\CHazel\Layer.cpp" />
     <ClCompile Include="src\CHazel\LayerStack.cpp" />
     <ClCompile Include="src\CHazel\Log.cpp" />
+    <ClCompile Include="src\CHazel\OrthographicCameraController.cpp" />
     <ClCompile Include="src\CHazel\Renderer\Buffer.cpp" />
     <ClCompile Include="src\CHazel\Renderer\OrthographicCameca.cpp" />
     <ClCompile Include="src\CHazel\Renderer\Renderer.cpp" />

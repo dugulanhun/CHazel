@@ -11,6 +11,7 @@
 #include "CHazel/Input.h"
 #include "CHazel/KeyCodes.h"
 #include "CHazel/MouseButtonCodes.h"
+#include "CHazel/OrthographicCameraController.h"
 
 #include "CHazel/ImGui/ImGuiLayer.h"
 
