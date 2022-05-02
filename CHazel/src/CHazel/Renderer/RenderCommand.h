@@ -5,7 +5,7 @@
 namespace CHazel
 {
 
-	class RendererCommand
+	class RenderCommand
 	{
 	public:
 		inline static void Init()

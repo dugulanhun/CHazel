@@ -1,4 +1,5 @@
 #include <CHazel.h>
+#include "CHazel/Core/EntryPoint.h"
 
 #include "Platform/OpenGL/OpenGLShader.h"
 
@@ -8,13 +9,15 @@
 
 #include <glm/gtc/type_ptr.hpp>
 
+#include "Sandbox2D.h"
+
 class ExampleLayer: public CHazel::Layer
 {
 public:
 	ExampleLayer()
 		:Layer("Example"), m_CameraController(1280.0f / 720.0f)
 	{
-		m_VertexArray.reset(CHazel::VertexArray::Create());
+		m_VertexArray = CHazel::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
@@ -36,7 +39,7 @@ public:
 		indexBuffer.reset(CHazel::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVertexArray.reset(CHazel::VertexArray::Create());
+		m_SquareVertexArray = CHazel::VertexArray::Create();
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -132,8 +135,8 @@ public:
 	{
 		m_CameraController.OnUpdate(ts);
 
-		CHazel::RendererCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
-		CHazel::RendererCommand::Clear();
+		CHazel::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		CHazel::RenderCommand::Clear();
 
 		CHazel::Renderer::BeginScene(m_CameraController.GetCamera());
 
@@ -201,8 +204,9 @@ class Sandbox : public CHazel::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExampleLayer());
+		// PushLayer(new ExampleLayer());
 		// PushLayer(new CHazel::ImGuiLayer());
+		PushLayer(new Sandbox2D());
 	}
 
 	~Sandbox()

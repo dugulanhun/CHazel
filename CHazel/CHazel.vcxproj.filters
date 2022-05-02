@@ -123,7 +123,7 @@
     <ClInclude Include="src\CHazel\Renderer\RendererAPI.h">
       <Filter>src\CHazel\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\Renderer\RendererCommand.h">
+    <ClInclude Include="src\CHazel\Renderer\RenderCommand.h">
       <Filter>src\CHazel\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\CHazel\Renderer\Shader.h">
@@ -1445,7 +1445,7 @@
     <ClCompile Include="src\CHazel\Renderer\RendererAPI.cpp">
       <Filter>src\CHazel\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\CHazel\Renderer\RendererCommand.cpp">
+    <ClCompile Include="src\CHazel\Renderer\RenderCommand.cpp">
       <Filter>src\CHazel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\CHazel\Renderer\Shader.cpp">

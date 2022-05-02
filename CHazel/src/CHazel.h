@@ -17,7 +17,7 @@
 
 //-------Renderer-------------
 #include "CHazel/Renderer/Renderer.h"
-#include "CHazel/Renderer/RendererCommand.h"
+#include "CHazel/Renderer/RenderCommand.h"
 
 #include "CHazel/Renderer/Buffer.h"
 #include "CHazel/Renderer/Shader.h"
@@ -26,6 +26,3 @@
 
 #include "CHazel/Renderer/OrthographicCameca.h"
 
-//-------Entry Point-------------
-#include "CHazel/Core/EntryPoint.h"
-//-------------------------------
