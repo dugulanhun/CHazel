@@ -1,5 +1,5 @@
 #pragma once
-#include "CHazel/Layer.h"
+#include "CHazel/Core/Layer.h"
 
 #include "CHazel/Events/ApplicationEvent.h"
 #include "CHazel/Events/KeyEvent.h"

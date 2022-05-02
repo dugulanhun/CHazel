@@ -1,7 +1,7 @@
 #pragma once
 
 #include "chzpch.h"
-#include "CHazel/Core.h"
+#include "CHazel/Core/Core.h"
 
 namespace CHazel {
 

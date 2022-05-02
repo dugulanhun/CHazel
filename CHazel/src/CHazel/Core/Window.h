@@ -2,7 +2,7 @@
 
 #include "chzpch.h"
 
-#include "CHazel/Core.h"
+#include "CHazel/Core/Core.h"
 #include "CHazel/Events/Event.h"
 
 namespace CHazel {

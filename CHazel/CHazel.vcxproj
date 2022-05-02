@@ -141,32 +141,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\CHazel.h" />
-    <ClInclude Include="src\CHazel\Application.h" />
-    <ClInclude Include="src\CHazel\Core.h" />
+    <ClInclude Include="src\CHazel\Core\Application.h" />
+    <ClInclude Include="src\CHazel\Core\Core.h" />
+    <ClInclude Include="src\CHazel\Core\EntryPoint.h" />
+    <ClInclude Include="src\CHazel\Core\Input.h" />
+    <ClInclude Include="src\CHazel\Core\KeyCodes.h" />
+    <ClInclude Include="src\CHazel\Core\Layer.h" />
+    <ClInclude Include="src\CHazel\Core\LayerStack.h" />
+    <ClInclude Include="src\CHazel\Core\Log.h" />
+    <ClInclude Include="src\CHazel\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\CHazel\Core\Timestep.h" />
-    <ClInclude Include="src\CHazel\EntryPoint.h" />
+    <ClInclude Include="src\CHazel\Core\Window.h" />
     <ClInclude Include="src\CHazel\Events\ApplicationEvent.h" />
     <ClInclude Include="src\CHazel\Events\Event.h" />
     <ClInclude Include="src\CHazel\Events\KeyEvent.h" />
     <ClInclude Include="src\CHazel\Events\MouseEvent.h" />
     <ClInclude Include="src\CHazel\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\CHazel\Input.h" />
-    <ClInclude Include="src\CHazel\KeyCodes.h" />
-    <ClInclude Include="src\CHazel\Layer.h" />
-    <ClInclude Include="src\CHazel\LayerStack.h" />
-    <ClInclude Include="src\CHazel\Log.h" />
-    <ClInclude Include="src\CHazel\MouseButtonCodes.h" />
-    <ClInclude Include="src\CHazel\OrthographicCameraController.h" />
     <ClInclude Include="src\CHazel\Renderer\Buffer.h" />
     <ClInclude Include="src\CHazel\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\CHazel\Renderer\OrthographicCameca.h" />
+    <ClInclude Include="src\CHazel\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\CHazel\Renderer\Renderer.h" />
     <ClInclude Include="src\CHazel\Renderer\RendererAPI.h" />
     <ClInclude Include="src\CHazel\Renderer\RendererCommand.h" />
     <ClInclude Include="src\CHazel\Renderer\Shader.h" />
     <ClInclude Include="src\CHazel\Renderer\Texture.h" />
     <ClInclude Include="src\CHazel\Renderer\VertexArray.h" />
-    <ClInclude Include="src\CHazel\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -594,15 +594,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\CHazel\Application.cpp" />
+    <ClCompile Include="src\CHazel\Core\Application.cpp" />
+    <ClCompile Include="src\CHazel\Core\Layer.cpp" />
+    <ClCompile Include="src\CHazel\Core\LayerStack.cpp" />
+    <ClCompile Include="src\CHazel\Core\Log.cpp" />
     <ClCompile Include="src\CHazel\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\CHazel\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\CHazel\Layer.cpp" />
-    <ClCompile Include="src\CHazel\LayerStack.cpp" />
-    <ClCompile Include="src\CHazel\Log.cpp" />
-    <ClCompile Include="src\CHazel\OrthographicCameraController.cpp" />
     <ClCompile Include="src\CHazel\Renderer\Buffer.cpp" />
     <ClCompile Include="src\CHazel\Renderer\OrthographicCameca.cpp" />
+    <ClCompile Include="src\CHazel\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\CHazel\Renderer\Renderer.cpp" />
     <ClCompile Include="src\CHazel\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\CHazel\Renderer\RendererCommand.cpp" />

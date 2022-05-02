@@ -2,16 +2,16 @@
 
 // For use by CHazel applications
 
-#include "CHazel/Application.h"
-#include "CHazel/Layer.h"
-#include "CHazel/Log.h"
+#include "CHazel/Core/Application.h"
+#include "CHazel/Core/Layer.h"
+#include "CHazel/Core/Log.h"
 
 #include "CHazel/Core/Timestep.h"
 
-#include "CHazel/Input.h"
-#include "CHazel/KeyCodes.h"
-#include "CHazel/MouseButtonCodes.h"
-#include "CHazel/OrthographicCameraController.h"
+#include "CHazel/Core/Input.h"
+#include "CHazel/Core/KeyCodes.h"
+#include "CHazel/Core/MouseButtonCodes.h"
+#include "CHazel/Renderer/OrthographicCameraController.h"
 
 #include "CHazel/ImGui/ImGuiLayer.h"
 
@@ -27,5 +27,5 @@
 #include "CHazel/Renderer/OrthographicCameca.h"
 
 //-------Entry Point-------------
-#include "CHazel/EntryPoint.h"
+#include "CHazel/Core/EntryPoint.h"
 //-------------------------------

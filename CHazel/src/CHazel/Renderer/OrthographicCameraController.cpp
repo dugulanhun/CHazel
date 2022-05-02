@@ -2,8 +2,8 @@
 
 #include "OrthographicCameraController.h"
 
-#include "CHazel/Input.h"
-#include "CHazel/KeyCodes.h"
+#include "CHazel/Core/Input.h"
+#include "CHazel/Core/KeyCodes.h"
 
 namespace CHazel {
 

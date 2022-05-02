@@ -1,7 +1,7 @@
 #include "chzpch.h"
 #include "WindowsWindow.h"
 
-#include "CHazel/Core.h"
+#include "CHazel/Core/Core.h"
 
 #include "CHazel/Events/ApplicationEvent.h"
 #include "CHazel/Events/MouseEvent.h"

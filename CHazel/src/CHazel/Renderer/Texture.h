@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "CHazel/Core.h"
+#include "CHazel/Core/Core.h"
 
 namespace CHazel {
 

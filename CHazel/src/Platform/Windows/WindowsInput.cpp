@@ -1,7 +1,7 @@
 #include "chzpch.h"
 #include "WindowsImput.h"
 
-#include "CHazel/Application.h"
+#include "CHazel/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace CHazel {

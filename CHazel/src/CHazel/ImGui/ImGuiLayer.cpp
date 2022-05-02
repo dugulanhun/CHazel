@@ -1,5 +1,5 @@
 #include "chzpch.h"
-#include "CHazel/Core.h"
+#include "CHazel/Core/Core.h"
 #include "ImGuiLayer.h"
 
 #include "imgui.h"
@@ -7,7 +7,7 @@
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 
-#include "CHazel/Application.h"
+#include "CHazel/Core/Application.h"
 
 // Temp
 #include "glad/glad.h"

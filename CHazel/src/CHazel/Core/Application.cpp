@@ -3,8 +3,8 @@
 
 #include "CHazel/Renderer/Renderer.h"
 
-#include "CHazel/Input.h"
-#include "CHazel/KeyCodes.h"
+#include "CHazel/Core/Input.h"
+#include "CHazel/Core/KeyCodes.h"
 
 #include <GLFW/glfw3.h>
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CHazel/Input.h"
+#include "CHazel/Core/Input.h"
 
 namespace CHazel {
 

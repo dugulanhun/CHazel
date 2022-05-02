@@ -2,8 +2,8 @@
 
 #include "Core.h"
 #include "Window.h"
-#include "CHazel/Layer.h"
-#include "CHazel/LayerStack.h"
+#include "CHazel/Core/Layer.h"
+#include "CHazel/Core/LayerStack.h"
 #include "CHazel/Events/ApplicationEvent.h"
 
 #include "CHazel/Core/Timestep.h"

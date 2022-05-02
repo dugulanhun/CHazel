@@ -57,17 +57,38 @@
     <ClInclude Include="src\CHazel.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\Application.h">
-      <Filter>src\CHazel</Filter>
+    <ClInclude Include="src\CHazel\Core\Application.h">
+      <Filter>src\CHazel\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\Core.h">
-      <Filter>src\CHazel</Filter>
+    <ClInclude Include="src\CHazel\Core\Core.h">
+      <Filter>src\CHazel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHazel\Core\EntryPoint.h">
+      <Filter>src\CHazel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHazel\Core\Input.h">
+      <Filter>src\CHazel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHazel\Core\KeyCodes.h">
+      <Filter>src\CHazel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHazel\Core\Layer.h">
+      <Filter>src\CHazel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHazel\Core\LayerStack.h">
+      <Filter>src\CHazel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHazel\Core\Log.h">
+      <Filter>src\CHazel\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHazel\Core\MouseButtonCodes.h">
+      <Filter>src\CHazel\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\CHazel\Core\Timestep.h">
       <Filter>src\CHazel\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\EntryPoint.h">
-      <Filter>src\CHazel</Filter>
+    <ClInclude Include="src\CHazel\Core\Window.h">
+      <Filter>src\CHazel\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\CHazel\Events\ApplicationEvent.h">
       <Filter>src\CHazel\Events</Filter>
@@ -84,24 +105,6 @@
     <ClInclude Include="src\CHazel\ImGui\ImGuiLayer.h">
       <Filter>src\CHazel\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\Input.h">
-      <Filter>src\CHazel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CHazel\KeyCodes.h">
-      <Filter>src\CHazel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CHazel\Layer.h">
-      <Filter>src\CHazel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CHazel\LayerStack.h">
-      <Filter>src\CHazel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CHazel\Log.h">
-      <Filter>src\CHazel</Filter>
-    </ClInclude>
-    <ClInclude Include="src\CHazel\MouseButtonCodes.h">
-      <Filter>src\CHazel</Filter>
-    </ClInclude>
     <ClInclude Include="src\CHazel\Renderer\Buffer.h">
       <Filter>src\CHazel\Renderer</Filter>
     </ClInclude>
@@ -109,6 +112,9 @@
       <Filter>src\CHazel\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\CHazel\Renderer\OrthographicCameca.h">
+      <Filter>src\CHazel\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHazel\Renderer\OrthographicCameraController.h">
       <Filter>src\CHazel\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\CHazel\Renderer\Renderer.h">
@@ -123,11 +129,11 @@
     <ClInclude Include="src\CHazel\Renderer\Shader.h">
       <Filter>src\CHazel\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\Renderer\VertexArray.h">
+    <ClInclude Include="src\CHazel\Renderer\Texture.h">
       <Filter>src\CHazel\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\Window.h">
-      <Filter>src\CHazel</Filter>
+    <ClInclude Include="src\CHazel\Renderer\VertexArray.h">
+      <Filter>src\CHazel\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -139,6 +145,9 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -1401,13 +1410,19 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\Renderer\Texture.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
-    <ClInclude Include="src\CHazel\OrthographicCameraController.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\CHazel\Application.cpp">
-      <Filter>src\CHazel</Filter>
+    <ClCompile Include="src\CHazel\Core\Application.cpp">
+      <Filter>src\CHazel\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHazel\Core\Layer.cpp">
+      <Filter>src\CHazel\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHazel\Core\LayerStack.cpp">
+      <Filter>src\CHazel\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHazel\Core\Log.cpp">
+      <Filter>src\CHazel\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\CHazel\ImGui\ImGuiBuild.cpp">
       <Filter>src\CHazel\ImGui</Filter>
@@ -1415,19 +1430,13 @@
     <ClCompile Include="src\CHazel\ImGui\ImGuiLayer.cpp">
       <Filter>src\CHazel\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\CHazel\Layer.cpp">
-      <Filter>src\CHazel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CHazel\LayerStack.cpp">
-      <Filter>src\CHazel</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CHazel\Log.cpp">
-      <Filter>src\CHazel</Filter>
-    </ClCompile>
     <ClCompile Include="src\CHazel\Renderer\Buffer.cpp">
       <Filter>src\CHazel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\CHazel\Renderer\OrthographicCameca.cpp">
+      <Filter>src\CHazel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHazel\Renderer\OrthographicCameraController.cpp">
       <Filter>src\CHazel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\CHazel\Renderer\Renderer.cpp">
@@ -1440,6 +1449,9 @@
       <Filter>src\CHazel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\CHazel\Renderer\Shader.cpp">
+      <Filter>src\CHazel\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHazel\Renderer\Texture.cpp">
       <Filter>src\CHazel\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\CHazel\Renderer\VertexArray.cpp">
@@ -1457,6 +1469,9 @@
     <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1472,8 +1487,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\CHazel\Renderer\Texture.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp" />
-    <ClCompile Include="src\CHazel\OrthographicCameraController.cpp" />
   </ItemGroup>
 </Project>
