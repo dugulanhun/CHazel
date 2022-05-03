@@ -17,6 +17,7 @@
 
 //-------Renderer-------------
 #include "CHazel/Renderer/Renderer.h"
+#include "CHazel/Renderer/Renderer2D.h"
 #include "CHazel/Renderer/RenderCommand.h"
 
 #include "CHazel/Renderer/Buffer.h"
