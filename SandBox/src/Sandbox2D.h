@@ -21,5 +21,7 @@ private:
 	CHazel::Ref<CHazel::VertexArray> m_SquareVA;
 	CHazel::Ref<CHazel::Shader> m_FlatColorShader;
 
+	CHazel::Ref<CHazel::Texture2D> m_CheckerboardTexture;
+
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 };
