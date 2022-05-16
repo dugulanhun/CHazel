@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OrthographicCameca.h"
+#include "CHazel/Renderer/OrthographicCameca.h"
 
-#include "Texture.h"
+#include "CHazel/Renderer/Texture.h"
 
 namespace CHazel {
 

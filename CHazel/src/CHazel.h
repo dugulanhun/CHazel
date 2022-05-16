@@ -2,6 +2,8 @@
 
 // For use by CHazel applications
 
+#include "CHazel/Core/Core.h"
+
 #include "CHazel/Core/Application.h"
 #include "CHazel/Core/Layer.h"
 #include "CHazel/Core/Log.h"

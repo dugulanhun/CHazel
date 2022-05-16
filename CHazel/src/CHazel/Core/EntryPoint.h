@@ -1,5 +1,7 @@
 #pragma once
 
+#include "CHazel/Core/Core.h"
+
 #ifdef CHZ_PLATFORM_WINDOWS
 
 extern CHazel::Application* CHazel::CreateApplication();

@@ -1,10 +1,10 @@
 #include "chzpch.h"
 
-#include "Renderer2D.h"
-#include "RenderCommand.h"
+#include "CHazel/Renderer/Renderer2D.h"
 
-#include "VertexArray.h"
-#include "Shader.h"
+#include "CHazel/Renderer/RenderCommand.h"
+#include "CHazel/Renderer/VertexArray.h"
+#include "CHazel/Renderer/Shader.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -30,8 +30,7 @@ namespace CHazel {
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		Ref<VertexBuffer> squareVB;
-		squareVB.reset(VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Ref<VertexBuffer> squareVB = VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 		squareVB->SetLayout({
 			{ ShaderDataType::Float3, "a_Position" },
 			{ ShaderDataType::Float2, "a_TexCoord" }
@@ -39,8 +38,7 @@ namespace CHazel {
 		s_data->QuadVertexArray->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		Ref<IndexBuffer> squareIB;
-		squareIB.reset(IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Ref<IndexBuffer> squareIB = IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		s_data->QuadVertexArray->SetIndexBuffer(squareIB);
 
 		s_data->WhiteTexture = Texture2D::Create(1, 1);

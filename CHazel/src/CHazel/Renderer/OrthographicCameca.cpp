@@ -1,5 +1,5 @@
 #include "chzpch.h"
-#include "OrthographicCameca.h"
+#include "CHazel/Renderer/OrthographicCameca.h"
 
 #include "glm/gtc/matrix_transform.hpp"
 

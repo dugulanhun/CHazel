@@ -1,11 +1,8 @@
 #include "chzpch.h"
-#include "LayerStack.h"
+#include "CHazel/Core/LayerStack.h"
 
 namespace CHazel
 {
-	LayerStack::LayerStack()
-	{
-	}
 	
 	LayerStack::~LayerStack()
 	{

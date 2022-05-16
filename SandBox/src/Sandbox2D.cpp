@@ -1,5 +1,5 @@
 #include "Sandbox2D.h"
-#include "imgui/imgui.h"
+#include <imgui/imgui.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -86,8 +86,8 @@ void Sandbox2D::OnImGuiRender()
 	for (auto& result : m_ProfileResults)
 	{
 		char label[50];
-		strcpy(label, "%.3fms");
-		strcat(label, result.Name);
+		strcpy_s(label, "%.3fms");
+		strcat_s(label, result.Name);
 		ImGui::Text(label, result.Time);
 	}
 	m_ProfileResults.clear();

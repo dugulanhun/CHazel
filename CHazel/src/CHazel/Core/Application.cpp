@@ -1,5 +1,5 @@
 #include "chzpch.h"
-#include "Application.h"
+#include "CHazel/Core/Application.h"
 
 #include "CHazel/Renderer/Renderer.h"
 
@@ -10,8 +10,6 @@
 
 namespace CHazel{
 
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
-
 	Application* Application::s_Instance = nullptr;
 		
 	Application::Application()
@@ -20,7 +18,7 @@ namespace CHazel{
 		s_Instance = this;
 
 		m_Window = Scope<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_Window->SetEventCallback(CHZ_BIND_EVENT_FN(Application::OnEvent));
 
 		Renderer::Init();
 
@@ -30,7 +28,7 @@ namespace CHazel{
 
 	Application::~Application()
 	{
-
+		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
@@ -48,8 +46,8 @@ namespace CHazel{
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
+		dispatcher.Dispatch<WindowCloseEvent>(CHZ_BIND_EVENT_FN(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(CHZ_BIND_EVENT_FN(Application::OnWindowResize));
 
 		for (auto it=m_LayerStack.end(); it!=m_LayerStack.begin();)
 		{

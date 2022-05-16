@@ -1,5 +1,5 @@
 #include "chzpch.h"
-#include "WindowsImput.h"
+#include "Platform/Windows/WindowsImput.h"
 
 #include "CHazel/Core/Application.h"
 #include <GLFW/glfw3.h>

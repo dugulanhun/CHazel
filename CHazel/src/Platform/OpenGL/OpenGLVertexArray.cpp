@@ -1,5 +1,5 @@
 #include "chzpch.h"
-#include "OpenGLVertexArray.h"
+#include "Platform/OpenGL/OpenGLVertexArray.h"
 
 #include "glad/glad.h"
 
@@ -9,17 +9,17 @@ namespace CHazel
 	{
 		switch (type)
 		{
-		case CHazel::ShaderDataType::Float:    return GL_FLOAT;
-		case CHazel::ShaderDataType::Float2:   return GL_FLOAT;
-		case CHazel::ShaderDataType::Float3:   return GL_FLOAT;
-		case CHazel::ShaderDataType::Float4:   return GL_FLOAT;
-		case CHazel::ShaderDataType::Mat3:     return GL_FLOAT;
-		case CHazel::ShaderDataType::Mat4:     return GL_FLOAT;
-		case CHazel::ShaderDataType::Int:      return GL_INT;
-		case CHazel::ShaderDataType::Int2:     return GL_INT;
-		case CHazel::ShaderDataType::Int3:     return GL_INT;
-		case CHazel::ShaderDataType::Int4:     return GL_INT;
-		case CHazel::ShaderDataType::Bool:     return GL_BOOL;
+		case ShaderDataType::Float:    return GL_FLOAT;
+		case ShaderDataType::Float2:   return GL_FLOAT;
+		case ShaderDataType::Float3:   return GL_FLOAT;
+		case ShaderDataType::Float4:   return GL_FLOAT;
+		case ShaderDataType::Mat3:     return GL_FLOAT;
+		case ShaderDataType::Mat4:     return GL_FLOAT;
+		case ShaderDataType::Int:      return GL_INT;
+		case ShaderDataType::Int2:     return GL_INT;
+		case ShaderDataType::Int3:     return GL_INT;
+		case ShaderDataType::Int4:     return GL_INT;
+		case ShaderDataType::Bool:     return GL_BOOL;
 		}
 
 		CHZ_CORE_ASSERT(false, "Unknown ShaderDataType!");

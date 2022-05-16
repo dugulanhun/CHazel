@@ -1,11 +1,11 @@
 #pragma once
 
 
-#include "Event.h"
+#include "CHazel/Events/Event.h"
 
 namespace CHazel {
 
-	class CHAZEL_API MouseMovedEvent : public Event
+	class MouseMovedEvent : public Event
 	{
 	public:
 		MouseMovedEvent(float x, float y)
@@ -28,7 +28,7 @@ namespace CHazel {
 		float m_MouseX, m_MouseY;
 	};
 
-	class CHAZEL_API MouseScrolledEvent : public Event
+	class MouseScrolledEvent : public Event
 	{
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset)
@@ -50,7 +50,7 @@ namespace CHazel {
 		float m_XOffset, m_YOffset;
 	};
 
-	class CHAZEL_API MouseButtonEvent : public Event
+	class MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -63,7 +63,7 @@ namespace CHazel {
 		int m_Button;
 	};
 
-	class CHAZEL_API MouseButtonPressedEvent : public MouseButtonEvent
+	class MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -79,7 +79,7 @@ namespace CHazel {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class CHAZEL_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)

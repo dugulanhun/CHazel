@@ -1,8 +1,8 @@
 #include "chzpch.h"
 
-#include "Texture.h"
+#include "CHazel/Renderer/Texture.h"
 
-#include "Renderer.h"
+#include "CHazel/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace CHazel {

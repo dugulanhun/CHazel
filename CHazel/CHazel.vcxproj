@@ -602,6 +602,7 @@
     <ClCompile Include="src\CHazel\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\CHazel\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\CHazel\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\CHazel\Renderer\GraphicsContext.cpp" />
     <ClCompile Include="src\CHazel\Renderer\OrthographicCameca.cpp" />
     <ClCompile Include="src\CHazel\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\CHazel\Renderer\Renderer.cpp" />

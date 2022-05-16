@@ -1,7 +1,7 @@
 #include "chzpch.h"
 #include "Shader.h"
 
-#include "RendererAPI.h"
+#include "CHazel/Renderer/RendererAPI.h"
 
 #include "Platform/OpenGL/OpenGLShader.h"
 
@@ -12,7 +12,7 @@ namespace CHazel {
 		switch (RendererAPI::GetAPI())
 		{
 		case RendererAPI::API::None: CHZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL: return std::make_shared<OpenGLShader>(filepath);
+		case RendererAPI::API::OpenGL: return CreateRef<OpenGLShader>(filepath);
 		}
 
 		CHZ_CORE_ASSERT(false, "Unknown RendererAPI!");
@@ -24,7 +24,7 @@ namespace CHazel {
 		switch (RendererAPI::GetAPI())
 		{
 		case RendererAPI::API::None: CHZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL: return std::make_shared<OpenGLShader>(name, vertexSource, fragmentSource);
+		case RendererAPI::API::OpenGL: return CreateRef<OpenGLShader>(name, vertexSource, fragmentSource);
 		}
 
 		CHZ_CORE_ASSERT(false, "Unknown RendererAPI!");

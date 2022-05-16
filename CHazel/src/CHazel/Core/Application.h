@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Core.h"
-#include "Window.h"
+#include "CHazel/Core/Core.h"
+#include "CHazel/Core/Window.h"
 #include "CHazel/Core/Layer.h"
 #include "CHazel/Core/LayerStack.h"
 #include "CHazel/Events/ApplicationEvent.h"
@@ -12,7 +12,7 @@
 
 namespace CHazel {
 	
-	class CHAZEL_API Application
+	class Application
 	{
 	public:
 		Application();

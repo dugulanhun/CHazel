@@ -1,6 +1,7 @@
 #pragma once
 
-#include "RendererAPI.h"
+
+#include "CHazel/Renderer/RendererAPI.h"
 
 namespace CHazel
 {
@@ -34,7 +35,7 @@ namespace CHazel
 		}
 
 	public:
-		static RendererAPI* s_RendererAPI;
+		static Scope<RendererAPI> s_RendererAPI;
 
 	};
 }
