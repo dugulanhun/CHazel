@@ -27,16 +27,22 @@ namespace CHazel {
 	
 	CHazel::WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		Init(props);
 	}
 
 	CHazel::WindowsWindow::~WindowsWindow()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		Shutdown();
 	}
 
 	void CHazel::WindowsWindow::Init(const WindowProps& props)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		m_Data.Title = props.Title;
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
@@ -45,15 +51,20 @@ namespace CHazel {
 
 		if (s_GLFWWindowCount == 0)
 		{
-			// TODO: glfwTerminate on system shutdown
+			CHZ_PROFILE_SCOPE("glfwInit");
+
 			int success = glfwInit();
 			CHZ_CORE_ASSERT(success, "Could not initialize GLFW!");
 
 			glfwSetErrorCallback(GLFWErrorCallback);
 		}
 
-		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		++s_GLFWWindowCount;
+		{
+			CHZ_PROFILE_FUNCTION();
+
+			m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+			++s_GLFWWindowCount;
+		}
 
 		m_Context = GraphicsContext::Create(m_Window);
 		m_Context->Init();
@@ -154,6 +165,8 @@ namespace CHazel {
 
 	void CHazel::WindowsWindow::Shutdown()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		glfwDestroyWindow(m_Window);
 		--s_GLFWWindowCount;
 
@@ -165,12 +178,16 @@ namespace CHazel {
 
 	void CHazel::WindowsWindow::OnUpdate()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 	}
 
 	void CHazel::WindowsWindow::SetVSync(bool enable)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		// If w/out brace, only 1 closest line will be executed
 		// 这里的1/0并不是开/关的意思，而是下一帧Swap之间要等多少次Screen Update。。。
 		// 但是glfwSwapInterval内部封装了对应平台的vsync函数，所以基本上就是开关的意思。。。

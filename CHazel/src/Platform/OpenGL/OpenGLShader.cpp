@@ -21,6 +21,8 @@ namespace CHazel {
 
 	OpenGLShader::OpenGLShader(const std::string& filepath)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		std::string source = ReadFile(filepath);
 		auto shaderSources = PreProcess(source);
 		Compile(shaderSources);
@@ -35,6 +37,8 @@ namespace CHazel {
 
 	OpenGLShader::OpenGLShader(const std::string& name, const std::string& vertexSource, const std::string& fragmentSource): m_Name(name)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		std::unordered_map<GLenum, std::string> sources;
 		sources[GL_VERTEX_SHADER] = vertexSource;
 		sources[GL_FRAGMENT_SHADER] = fragmentSource;
@@ -43,11 +47,15 @@ namespace CHazel {
 
 	OpenGLShader::~OpenGLShader()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		glDeleteProgram(m_RendererID);
 	}
 
 	std::string OpenGLShader::ReadFile(const std::string& filepath)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		std::string result;
 		std::ifstream in(filepath, std::ios::in | std::ios::binary);
 		if (in)
@@ -76,6 +84,8 @@ namespace CHazel {
 
 	std::unordered_map<GLenum, std::string> OpenGLShader::PreProcess(const std::string& source)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		std::unordered_map<GLenum, std::string> shaderSources;
 
 		const char* typeToken = "#type";
@@ -99,6 +109,8 @@ namespace CHazel {
 
 	void OpenGLShader::Compile(const std::unordered_map<GLenum, std::string>& shaderSources)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		GLuint program = glCreateProgram();
 		CHZ_CORE_ASSERT(shaderSources.size() <= 2, "We only support 2 shader now");
 		std::array<GLenum, 2> glShaderIDs;
@@ -176,11 +188,15 @@ namespace CHazel {
 
 	void OpenGLShader::Bind() const
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		glUseProgram(m_RendererID);
 	}
 
 	void OpenGLShader::Unbind() const
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		glUseProgram(0);
 	}
 
@@ -228,36 +244,50 @@ namespace CHazel {
 
 	void OpenGLShader::SetInt(const std::string& name, int value)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		UploadUniformInt(name, value);
 	}
 
 	void OpenGLShader::SetFloat(const std::string& name, float value)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		UploadUniformFloat(name, value);
 	}
 
 	void OpenGLShader::SetFloat2(const std::string& name, const glm::vec2& value)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		UploadUniformFloat2(name, value);
 	}
 
 	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		UploadUniformFloat3(name, value);
 	}
 
 	void OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		UploadUniformFloat4(name, value);
 	}
 
 	void OpenGLShader::SetMat3(const std::string& name, const glm::mat3& matrix)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		UploadUniformMat3(name, matrix);
 	}
 
 	void OpenGLShader::SetMat4(const std::string& name, const glm::mat4& matrix)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		UploadUniformMat4(name, matrix);
 	}
 

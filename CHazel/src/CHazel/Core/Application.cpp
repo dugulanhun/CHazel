@@ -14,6 +14,8 @@ namespace CHazel{
 		
 	Application::Application()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		CHZ_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
@@ -28,23 +30,31 @@ namespace CHazel{
 
 	Application::~Application()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(overlay);
 		overlay->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(CHZ_BIND_EVENT_FN(Application::OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(CHZ_BIND_EVENT_FN(Application::OnWindowResize));
@@ -59,27 +69,35 @@ namespace CHazel{
 
 	void Application::run()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
+			CHZ_PROFILE_SCOPE("RunLoop");
+
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
+				{
+					CHZ_PROFILE_SCOPE("LayerStack OnUpdate");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
+
+				m_ImGuiLayer->Begin();
+				{
+					CHZ_PROFILE_SCOPE("LayerStack OnImGuiRender");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnImGuiRender();
+				}
+				m_ImGuiLayer->End();
+
 			}
-
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
-
-
-			// Temp
- 			// auto [x, y] = Input::GetMousePosition();
- 			// CHZ_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}
@@ -93,6 +111,8 @@ namespace CHazel{
 
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;

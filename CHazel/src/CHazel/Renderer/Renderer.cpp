@@ -9,6 +9,8 @@ namespace CHazel {
 
 	void Renderer::Init()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
 	}

@@ -15,6 +15,8 @@ namespace CHazel {
 
 	void OpenGLContext::Init()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		CHZ_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -27,6 +29,8 @@ namespace CHazel {
 
 	void OpenGLContext::SwapBuffers()
 	{
+		CHZ_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 

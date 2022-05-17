@@ -11,22 +11,21 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
+	CHZ_PROFILE_FUNCTION();
+
 	m_CheckerboardTexture = CHazel::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
 {
+	CHZ_PROFILE_FUNCTION();
 }
 
 void Sandbox2D::OnUpdate(CHazel::Timestep ts)
 {
 	CHZ_PROFILE_FUNCTION();
 
-	// Update
-	{
-		CHZ_PROFILE_SCOPE("m_CameraController::OnUpdate");
-		m_CameraController.OnUpdate(ts);
-	}
+	m_CameraController.OnUpdate(ts);
 
 	// Render
 	CHazel::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
