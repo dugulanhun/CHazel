@@ -1411,6 +1411,7 @@
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
     <ClInclude Include="src\CHazel\Renderer\Renderer2D.h" />
+    <ClInclude Include="src\CHazel\Debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CHazel\Core\Application.cpp">

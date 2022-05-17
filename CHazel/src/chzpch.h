@@ -15,6 +15,8 @@
 
 #include "CHazel/Core/Log.h"
 
+#include "CHazel/Debug/Instrumentor.h"
+
 #ifdef CHZ_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif

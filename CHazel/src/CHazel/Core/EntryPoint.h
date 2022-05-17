@@ -9,12 +9,17 @@ extern CHazel::Application* CHazel::CreateApplication();
 int main(int argc, char** argv)
 {
 	CHazel::Log::Init();
-	CHZ_CORE_WARN("Initialized Log!");
-	int a = 5;
-	CHZ_CORE_INFO("Hello! var={0}", a);
-
+	
+	CHZ_PROFILE_BEGIN_SESSION("Startup", "CHazelProfile-Startup.json");
 	auto app = CHazel::CreateApplication();
+	CHZ_PROFILE_END_SESSION();
+
+	CHZ_PROFILE_BEGIN_SESSION("Startup", "CHazelProfile-Runtime.json");
 	app->run();
+	CHZ_PROFILE_END_SESSION();
+
+	CHZ_PROFILE_BEGIN_SESSION("Startup", "CHazelProfile-Shutdown.json");
 	delete(app);
+	CHZ_PROFILE_END_SESSION();
 }
 #endif

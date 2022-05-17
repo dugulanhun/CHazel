@@ -152,6 +152,7 @@
     <ClInclude Include="src\CHazel\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\CHazel\Core\Timestep.h" />
     <ClInclude Include="src\CHazel\Core\Window.h" />
+    <ClInclude Include="src\CHazel\Debug\Instrumentor.h" />
     <ClInclude Include="src\CHazel\Events\ApplicationEvent.h" />
     <ClInclude Include="src\CHazel\Events\Event.h" />
     <ClInclude Include="src\CHazel\Events\KeyEvent.h" />
