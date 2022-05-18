@@ -122,7 +122,7 @@ namespace CHazel {
 	};
 }
 
-#define CHZ_PROFILE 1
+#define CHZ_PROFILE 0
 #if CHZ_PROFILE
 #define CHZ_PROFILE_BEGIN_SESSION(name, filepath) ::CHazel::Instrumentor::Get().BeginSession(name, filepath)
 #define CHZ_PROFILE_END_SESSION() ::CHazel::Instrumentor::Get().EndSession()

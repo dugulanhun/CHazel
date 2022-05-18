@@ -51,6 +51,11 @@ namespace CHazel{
 		overlay->OnAttach();
 	}
 
+	void Application::Close()
+	{
+		m_Running = false;
+	}
+
 	void Application::OnEvent(Event& e)
 	{
 		CHZ_PROFILE_FUNCTION();
