@@ -3,14 +3,14 @@
 #include "CHazel/ImGui/ImGuiLayer.h"
 
 #include <imgui.h>
-#include <backends/imgui_impl_glfw.h>
-#include <backends/imgui_impl_opengl3.h>
+#include <examples/imgui_impl_glfw.h>
+#include <examples/imgui_impl_opengl3.h>
 
 #include "CHazel/Core/Application.h"
 
 // Temp
-#include "glad/glad.h"
-#include "GLFW/glfw3.h"
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 namespace CHazel{
 
@@ -65,6 +65,13 @@ namespace CHazel{
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
+	}
+
+	void ImGuiLayer::OnEvent(Event& e)
+	{
+		ImGuiIO& io = ImGui::GetIO();
+		e.Handled |= e.IsInCategory(EventCategoryMouse) & io.WantCaptureMouse;
+		e.Handled |= e.IsInCategory(EventCategoryKeyboard) & io.WantCaptureKeyboard;
 	}
 	
 	void ImGuiLayer::Begin()

@@ -16,6 +16,8 @@ namespace CHazel {
 		void OnUpdate(Timestep ts);
 		void OnEvent(Event& e);
 
+		void OnResize(float width, float height);
+
 		OrthographicCameca& GetCamera() { return m_Camera; }
 		const OrthographicCameca& GetCamera() const { return m_Camera; }
 
