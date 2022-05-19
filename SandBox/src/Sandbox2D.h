@@ -20,7 +20,6 @@ private:
 	// Temp
 	CHazel::Ref<CHazel::VertexArray> m_SquareVA;
 	CHazel::Ref<CHazel::Shader> m_FlatColorShader;
-	CHazel::Ref<CHazel::Framebuffer> m_Framebuffer;
 
 	CHazel::Ref<CHazel::Texture2D> m_CheckerboardTexture;
 
