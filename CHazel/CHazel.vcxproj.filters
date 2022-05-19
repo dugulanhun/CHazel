@@ -1412,6 +1412,8 @@
     </ClInclude>
     <ClInclude Include="src\CHazel\Renderer\Renderer2D.h" />
     <ClInclude Include="src\CHazel\Debug\Instrumentor.h" />
+    <ClInclude Include="src\CHazel\Renderer\Framebuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CHazel\Core\Application.cpp">
@@ -1491,5 +1493,7 @@
     </ClCompile>
     <ClCompile Include="src\CHazel\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\CHazel\Renderer\GraphicsContext.cpp" />
+    <ClCompile Include="src\CHazel\Renderer\Framebuffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
   </ItemGroup>
 </Project>

@@ -24,6 +24,7 @@
 
 #include "CHazel/Renderer/Buffer.h"
 #include "CHazel/Renderer/Shader.h"
+#include "CHazel/Renderer/Framebuffer.h"
 #include "CHazel/Renderer/Texture.h"
 #include "CHazel/Renderer/VertexArray.h"
 
