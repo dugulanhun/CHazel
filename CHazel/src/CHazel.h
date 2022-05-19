@@ -12,7 +12,7 @@
 
 #include "CHazel/Core/Input.h"
 #include "CHazel/Core/KeyCodes.h"
-#include "CHazel/Core/MouseButtonCodes.h"
+#include "CHazel/Core/MouseCodes.h"
 #include "CHazel/Renderer/OrthographicCameraController.h"
 
 #include "CHazel/ImGui/ImGuiLayer.h"

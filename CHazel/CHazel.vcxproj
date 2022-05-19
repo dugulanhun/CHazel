@@ -149,7 +149,7 @@
     <ClInclude Include="src\CHazel\Core\Layer.h" />
     <ClInclude Include="src\CHazel\Core\LayerStack.h" />
     <ClInclude Include="src\CHazel\Core\Log.h" />
-    <ClInclude Include="src\CHazel\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\CHazel\Core\MouseCodes.h" />
     <ClInclude Include="src\CHazel\Core\Timestep.h" />
     <ClInclude Include="src\CHazel\Core\Window.h" />
     <ClInclude Include="src\CHazel\Debug\Instrumentor.h" />
@@ -177,9 +177,8 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsImput.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\chzpch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />

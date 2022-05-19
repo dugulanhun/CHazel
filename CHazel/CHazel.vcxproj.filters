@@ -84,7 +84,7 @@
     <ClInclude Include="src\CHazel\Core\Log.h">
       <Filter>src\CHazel\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\CHazel\Core\MouseButtonCodes.h">
+    <ClInclude Include="src\CHazel\Core\MouseCodes.h">
       <Filter>src\CHazel\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\CHazel\Core\Timestep.h">
@@ -167,12 +167,6 @@
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsImput.h">
-      <Filter>src\Platform\Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
-      <Filter>src\Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\chzpch.h">
       <Filter>src</Filter>
@@ -1425,6 +1419,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CHazel\Core\Application.cpp">
